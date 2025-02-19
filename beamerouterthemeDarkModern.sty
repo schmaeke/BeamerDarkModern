@@ -1,0 +1,20 @@
+%% DarkModern color-theme for LaTeX Beamer
+%% By Jan Niklas Schmäke created on 21.12.2024
+%% https://github.com/schmaeke/BeamerDarkModern
+
+\setbeamertemplate{footline}{%
+	\usebeamercolor*{section in head/foot}%
+	\color{fg}%
+	\hspace*{3mm}%
+	\insertauthor%
+	\enspace\textbullet\enspace%
+	\insertdate%
+	\enspace\textbullet\enspace%
+	\insertsubtitle%
+	\hfill%
+	\iflanguage{ngerman}{Folie}{Slide} \textbf{\insertframenumber} \iflanguage{ngerman}{von}{of} \textbf{\inserttotalframenumber}%
+	\hspace*{3mm}%
+	\vspace*{2mm}%
+}
+
+\endinput

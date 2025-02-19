@@ -1,0 +1,76 @@
+%% DarkModern color-theme for LaTeX Beamer
+%% By Jan Niklas Schmäke created on 21.12.2024
+%% https://github.com/schmaeke/BeamerDarkModern
+
+% Load xcolor package
+\RequirePackage{xcolor}
+
+% Define accent colors
+
+\definecolor{default-fg}{HTML}{ffffff}
+\definecolor{default-bg}{HTML}{1e1e1e}
+
+\definecolor{darkgray}{HTML}{3a3a3a}
+\definecolor{gray}{HTML}{505050}
+
+\definecolor{darkred}{HTML}{c04d4d}
+\definecolor{red}{HTML}{ff7070}
+
+\definecolor{darkgreen}{HTML}{8dc47e}
+\definecolor{green}{HTML}{c4f08c}
+
+\definecolor{darkyellow}{HTML}{d3b34a}
+\definecolor{yellow}{HTML}{f0e08f}
+
+\definecolor{darkblue}{HTML}{5c8ef0}
+\definecolor{blue}{HTML}{7da6ff}
+
+\definecolor{darkmagenta}{HTML}{ad71ac}
+\definecolor{magenta}{HTML}{e7a5e8}
+
+\definecolor{darkcyan}{HTML}{72b2cc}
+\definecolor{cyan}{HTML}{94e2ff}
+
+\definecolor{lightgray}{HTML}{c2c2c2}
+
+
+\colorlet{accent}{yellow}
+
+% Title frame
+\setbeamercolor*{title}{bg = default-bg, fg = accent}
+
+% Text
+\setbeamercolor*{normal text}{fg = default-fg}
+\setbeamercolor*{inverted text}{bg = default-fg, fg = default-bg}
+
+% Frame background
+\setbeamercolor*{background canvas}{bg = default-bg}
+
+% Structure
+\setbeamercolor*{structure}{fg = accent}
+
+% Section titles and toc
+\setbeamercolor*{section in head/foot}{fg = accent}
+\setbeamercolor*{section in toc}{fg = default-fg}
+\setbeamercolor*{section in toc shaded}{fg = default-fg!50!default-bg}
+
+% Alerted text
+\setbeamercolor*{alerted text}{fg = accent}
+
+% Blocks
+\colorlet{block-bg}{default-bg!50!darkgray}
+\setbeamercolor*{block title}{bg = block-bg, fg = accent}
+\setbeamercolor*{block body}{bg = block-bg}
+
+\setbeamercolor*{block title example}{bg = block-bg, fg = blue}
+\setbeamercolor*{block body example}{bg = block-bg}
+
+\setbeamercolor*{block title alerted}{bg = block-bg, fg = red}
+\setbeamercolor*{block body alerted}{bg = block-bg}
+
+% Bibliography
+\setbeamercolor{bibliography item}{fg = red}
+\setbeamercolor{bibliography entry author}{fg = accent}
+\setbeamercolor{bibliography entry title}{fg = default-fg}
+\setbeamercolor{bibliography entry location}{fg = default-fg}
+\setbeamercolor{bibliography entry note}{fg = default-fg}

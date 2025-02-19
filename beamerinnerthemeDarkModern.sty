@@ -1,0 +1,77 @@
+%% DarkModern color-theme for LaTeX Beamer
+%% By Jan Niklas Schmäke created on 21.12.2024
+%% https://github.com/schmaeke/BeamerDarkModern
+
+% Load required packages
+\RequirePackage{fontawesome5}
+\RequirePackage{caption}
+
+% Set size of the inner theme
+\setbeamersize{text margin left = 5mm, text margin right = 5mm}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Set blocks
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+% Enumerate & Itemize settings
+\setbeamertemplate{enumerate items}[default]
+
+\setbeamertemplate{itemize item}{\small\faChevronCircleRight}
+\setbeamertemplate{itemize subitem}{\small\faChevronRight}
+\setbeamertemplate{itemize subsubitem}{\small\faMinus}
+
+% Bibliography settings
+\setbeamertemplate{bibliography item}{\color{yellow}\faQuoteRight}
+
+% Title page
+\newcommand{\mail}[1]{\def\insertmail{#1}}
+\newcommand{\github}[1]{\def\insertgithub{#1}}
+\newcommand{\web}[1]{\def\insertweb{#1}}
+
+\renewcommand{\maketitle}{%
+	{
+		\usebeamercolor{normal text}
+		\begin{frame}[plain]
+			\begin{tikzpicture}[remember picture, overlay]
+				\node[below, fg, opacity = 1.0, shift = {(0mm, -5mm)}] at (current page.north) {%
+					\begin{minipage}{0.8\paperwidth}
+						\centering%
+						{\usebeamerfont{institute}\insertinstitute} \\[1mm]%
+						{\usebeamerfont{author}\insertauthor}%
+					\end{minipage}
+				};
+
+				{
+					\usebeamercolor{section in head/foot}
+					\highlight{current page}{0.8\textwidth}{fg}{%
+						{\usebeamerfont{title}\inserttitle}\\[1mm]%
+						{\usebeamerfont{subtitle}\insertsubtitle}%
+					}
+				}
+
+				\node[above, fg, opacity = 1.0, shift = {(0mm, 5mm)}] at (current page.south) {%
+					\begin{minipage}{0.8\paperwidth}
+						\centering%
+						\usebeamerfont{institute}%
+						\insertdate\\[2mm]%
+						\ifcsname insertmail\endcsname\faEnvelope\enspace\insertmail\fi%
+						\enspace\textbullet\enspace%
+						\ifcsname insertweb\endcsname\faGlobe\enspace\insertweb\fi%
+						\enspace\textbullet\enspace%
+						\ifcsname insertgithub\endcsname\faGithub\enspace\insertgithub\fi%
+					\end{minipage}
+				};
+			\end{tikzpicture}
+		\end{frame}
+		\addtocounter{framenumber}{-1}
+	}
+}
+
+% Captions
+\captionsetup{
+	labelfont = {sf, bf, small},
+	font = {small},
+	justification = raggedright
+}
