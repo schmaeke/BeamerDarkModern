@@ -16,4 +16,3 @@ For a comprehensive example, refer to `demonstrain.tex`.
     <br>
     <i>Preview of <code>demonstration.tex</code></i>
 </p>
-```
