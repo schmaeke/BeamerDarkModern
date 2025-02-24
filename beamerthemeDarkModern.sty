@@ -7,22 +7,6 @@
 \RequirePackage{hyperref}
 \RequirePackage{tikz}
 
-% Additional commands (used in the themes)
-\newcommand{\highlight}[4]{%
-	\node[#3, inner sep = 5mm, minimum height = 20mm] (content) at (#1) {%
-		\begin{minipage}[c]{#2}
-			\hsize=0pt%
-			\hsize=\textwidth%
-			\centering #4%
-		\end{minipage}
-	};
-	\draw[#3, line width = 1mm, opacity = 0.3] (content.north west) ++(0mm, -4mm) -- ++(0mm, 2mm) arc(180:90:2mm) -- ++(2mm, 0mm);
-	\draw[#3, line width = 1mm, opacity = 0.3] (content.north east) ++(0mm, -4mm) -- ++(0mm, 2mm) arc(0:90:2mm) -- ++(-2mm, 0mm);
-	\draw[#3, line width = 1mm, opacity = 0.3] (content.south west) ++(0mm, 4mm) -- ++(0mm, -2mm) arc(-180:-90:2mm) -- ++(2mm, 0mm);
-	\draw[#3, line width = 1mm, opacity = 0.3] (content.south east) ++(0mm, 4mm) -- ++(0mm, -2mm) arc(0:-90:2mm) -- ++(-2mm, 0mm);
-}
-
-
 % Load individual sub-themes
 \usecolortheme{DarkModern}
 \usefonttheme{DarkModern}
@@ -30,21 +14,25 @@
 \useoutertheme{DarkModern}
 
 % Additional commands
-\newcommand{\standoutframe}[1]{%
-	{
-		\usebeamercolor{normal text}
-		\begin{frame}[plain]
-			\begin{tikzpicture}[remember picture, overlay]
-				\usebeamercolor{section in head/foot}
-				\highlight{current page}{0.8\paperwidth}{fg}{#1}
-			\end{tikzpicture}
-		\end{frame}
-	}
+\newcommand{\standoutframe}[2]{%
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture, overlay]
+			\usebeamercolor{title}
+			\node[fg, inner sep = 5mm, draw = gray, minimum height = 20mm, rounded corners = 2mm] (box) at (current page) {%
+				\usebeamerfont{title}%
+				\begin{minipage}{0.8\paperwidth}
+					\centering#1%
+				\end{minipage}
+			};
+			\node[gray, fill = bg, left, shift = {(-5mm, 0mm)}] at (box.north east) {\huge#2};
+		\end{tikzpicture}
+	\end{frame}
 	\addtocounter{framenumber}{-1}
 }
 
 \newcommand{\sectionframe}[1]{%
-	\standoutframe{\section{#1}\usebeamerfont{title}#1}%
+	\section{#1}
+	\standoutframe{#1}{\MakeUppercase\sectionname\enspace\thesection}
 }
 
 \newcommand{\weblink}[1]{\href{http://#1}{\texttt{#1}}}
