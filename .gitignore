@@ -10,4 +10,5 @@
 *.pdf
 *.snm
 *.toc
+*.vrb
 .DS_Store
