@@ -15,6 +15,10 @@
 % Set blocks
 \setbeamertemplate{blocks}[rounded][shadow=false]
 
+% Table of contents
+\setbeamertemplate{section in toc}{\inserttocsectionnumber.\enspace\inserttocsection}
+\setbeamertemplate{subsection in toc}{\enspace\enspace-\enspace\inserttocsubsection\\}
+
 % Enumerate & Itemize settings
 \setbeamertemplate{enumerate items}[default]
 
@@ -23,46 +27,34 @@
 \setbeamertemplate{itemize subsubitem}{\small\faMinus}
 
 % Bibliography settings
-\setbeamertemplate{bibliography item}{\color{yellow}\faQuoteRight}
+\setbeamertemplate{bibliography item}{\color{cyan}\faQuoteRight}
 
 % Title page
-\newcommand{\mail}[1]{\def\insertmail{#1}}
-\newcommand{\github}[1]{\def\insertgithub{#1}}
-\newcommand{\web}[1]{\def\insertweb{#1}}
-
 \renewcommand{\maketitle}{%
 	{
 		\usebeamercolor{normal text}
 		\begin{frame}[plain]
 			\begin{tikzpicture}[remember picture, overlay]
-				\node[below, fg, opacity = 1.0, shift = {(0mm, -5mm)}] at (current page.north) {%
-					\begin{minipage}{0.8\paperwidth}
-						\centering%
-						{\usebeamerfont{institute}\insertinstitute} \\[1mm]%
-						{\usebeamerfont{author}\insertauthor}%
-					\end{minipage}
+				\usebeamercolor{title}
+				\node[rotate = -10, opacity = 0.2] at (current page) {%
+					\tikz{\draw[fg] (-\paperwidth, -\paperheight) grid (2\paperwidth, 2\paperheight);}
+				};
+				\usebeamercolor{normal text}
+				\node[below right, shift = {(5mm, -5mm)}] at (current page.north west) {\usebeamerfont{institute}\insertinstitute};
+
+				\node[below right, shift = {(5mm, 5mm)}] (title) at (current page.west) {%
+					\usebeamercolor{title}\color{fg}%
+					\usebeamerfont{title}%
+					\begin{minipage}{0.7\paperwidth}%
+						\raggedright\inserttitle%
+					\end{minipage}%
 				};
 
-				{
-					\usebeamercolor{section in head/foot}
-					\highlight{current page}{0.8\textwidth}{fg}{%
-						{\usebeamerfont{title}\inserttitle}\\[1mm]%
-						{\usebeamerfont{subtitle}\insertsubtitle}%
-					}
-				}
+				\node[above right, shift = {(0mm, 2mm)}] (author) at (title.north west) {\usebeamerfont{author}\insertauthor};
+				\node[above right, shift = {(0mm, 4mm)}] (author.north west) {\usebeamerfont{date}\insertdate};
 
-				\node[above, fg, opacity = 1.0, shift = {(0mm, 5mm)}] at (current page.south) {%
-					\begin{minipage}{0.8\paperwidth}
-						\centering%
-						\usebeamerfont{institute}%
-						\insertdate\\[2mm]%
-						\ifcsname insertmail\endcsname\faEnvelope\enspace\insertmail\fi%
-						\enspace\textbullet\enspace%
-						\ifcsname insertweb\endcsname\faGlobe\enspace\insertweb\fi%
-						\enspace\textbullet\enspace%
-						\ifcsname insertgithub\endcsname\faGithub\enspace\insertgithub\fi%
-					\end{minipage}
-				};
+
+				\node[above right, shift = {(5mm, 5mm)}] at (current page.south west) {\usebeamerfont{subtitle}\MakeUppercase\insertsubtitle};
 			\end{tikzpicture}
 		\end{frame}
 		\addtocounter{framenumber}{-1}
