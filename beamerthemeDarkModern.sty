@@ -5,6 +5,7 @@
 % Load required packages
 \RequirePackage{xcolor}
 \RequirePackage{hyperref}
+\RequirePackage{listings}
 \RequirePackage{tikz}
 
 % Load individual sub-themes
@@ -36,3 +37,49 @@
 }
 
 \newcommand{\weblink}[1]{\href{http://#1}{\texttt{#1}}}
+
+% Listings
+\lstdefinelanguage{Julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={$},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+}[keywords,comments,strings]%
+
+
+\lstset
+{
+	frame = single,
+	frameshape={RYR}{Y}{Y}{RYR},
+	framerule = 0.25mm,
+	rulecolor = \color{gray},
+	belowcaptionskip = 2mm,
+	aboveskip = 0em,
+	belowskip = 0em,
+	showstringspaces = false,
+	columns = fixed,
+	basicstyle = {\linespread{1.0}\ttfamily\small},
+	numbers = none,
+	numbersep = 0mm,
+	numberstyle = {\color{lightgray}\ttfamily\scriptsize},
+	xleftmargin = 0em,
+	keywordstyle = {\color{magenta}},
+	commentstyle = {\color{darkgreen}\slshape},
+	stringstyle = {\color{yellow}},
+	breaklines = true,
+	breakatwhitespace	= true,
+	tabsize = 2,
+	backgroundcolor = \color{block-bg},
+	mathescape = true,
+	captionpos = b,
+	emph = {continue,and},
+	emphstyle = {\color{blue}},
+	escapechar = ?,
+	language = Julia,
+}
