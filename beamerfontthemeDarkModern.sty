@@ -2,26 +2,24 @@
 %% By Jan Niklas Schmäke created on 21.12.2024
 %% https://github.com/schmaeke/BeamerDarkModern
 
-% Set base font theme
-\usefonttheme{default}
-
 % Load packages
+\RequirePackage{antpolt}
+\RequirePackage[familydefault]{Chivo}
 \RequirePackage[mono]{inconsolata}
-\RequirePackage[regular]{Chivo}
 \RequirePackage[T1]{fontenc}
 
-% Set default serif font
-\renewcommand{\rmdefault}{pplx}
-
 % Title frame
-\setbeamerfont{title}{family = \sffamily, size = \Huge, series = \normalfont}
-\setbeamerfont{subtitle}{family = \sffamily, size = \large, series = \bfseries}
+\setbeamerfont{title}{family = \rmfamily, size = {\fontsize{24pt}{24pt}\selectfont}, series = \bfseries}
+\setbeamerfont{subtitle}{family = \sffamily, size = \large, series = \normalfont}
 
-\setbeamerfont{author}{family = \sffamily, size = \huge, series = \normalfont}
+\setbeamerfont{author}{family = \sffamily, size = \Huge, series = \normalfont}
 \setbeamerfont{institute}{family = \sffamily, size = \large, series = \normalfont}
 
+% Normal text
+\setbeamerfont{normal text}{family = \sffamily}
+
 % Outer theme
-\setbeamerfont{frametitle}{family = \sffamily, size = \LARGE, series = \bfseries}
+\setbeamerfont{frametitle}{family = \rmfamily, size = \huge, series = \bfseries}
 \setbeamerfont{footline}{family = \sffamily, size = \footnotesize, series = \normalfont}
 
 % Itemize & Enumerate
