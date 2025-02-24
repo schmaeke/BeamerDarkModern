@@ -5,42 +5,45 @@
 % Load xcolor package
 \RequirePackage{xcolor}
 
-% Define accent colors
-
+% Define default colors
 \definecolor{default-fg}{HTML}{ffffff}
-\definecolor{default-bg}{HTML}{1e1e1e}
+\definecolor{default-bg}{HTML}{1f1f1f}
 
 \definecolor{darkgray}{HTML}{3a3a3a}
 \definecolor{gray}{HTML}{505050}
+\definecolor{lightgray}{HTML}{c2c2c2}
 
 \definecolor{darkred}{HTML}{c04d4d}
 \definecolor{red}{HTML}{ff7070}
+\definecolor{lightred}{HTML}{ffadad}
 
 \definecolor{darkgreen}{HTML}{8dc47e}
 \definecolor{green}{HTML}{c4f08c}
+\definecolor{lightgreen}{HTML}{e0ffb3}
 
 \definecolor{darkyellow}{HTML}{d3b34a}
 \definecolor{yellow}{HTML}{f0e08f}
+\definecolor{lightyellow}{HTML}{f8f4c3}
 
 \definecolor{darkblue}{HTML}{5c8ef0}
 \definecolor{blue}{HTML}{7da6ff}
+\definecolor{lightblue}{HTML}{adc8ff}
 
 \definecolor{darkmagenta}{HTML}{ad71ac}
 \definecolor{magenta}{HTML}{e7a5e8}
+\definecolor{lightmagenta}{HTML}{f7d0f8}
 
 \definecolor{darkcyan}{HTML}{72b2cc}
 \definecolor{cyan}{HTML}{94e2ff}
+\definecolor{lightcyan}{HTML}{c4f0ff}
 
-\definecolor{lightgray}{HTML}{c2c2c2}
-
-
-\colorlet{accent}{yellow}
+\colorlet{accent}{cyan}
 
 % Title frame
 \setbeamercolor*{title}{bg = default-bg, fg = accent}
 
 % Text
-\setbeamercolor*{normal text}{fg = default-fg}
+\setbeamercolor*{normal text}{bg = default-bg, fg = default-fg}
 \setbeamercolor*{inverted text}{bg = default-fg, fg = default-bg}
 
 % Frame background
@@ -62,7 +65,7 @@
 \setbeamercolor*{block title}{bg = block-bg, fg = accent}
 \setbeamercolor*{block body}{bg = block-bg}
 
-\setbeamercolor*{block title example}{bg = block-bg, fg = blue}
+\setbeamercolor*{block title example}{bg = block-bg, fg = green}
 \setbeamercolor*{block body example}{bg = block-bg}
 
 \setbeamercolor*{block title alerted}{bg = block-bg, fg = red}
