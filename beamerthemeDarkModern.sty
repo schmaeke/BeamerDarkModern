@@ -2,6 +2,12 @@
 %% By Jan Niklas Schmäke created on 21.12.2024
 %% https://github.com/schmaeke/BeamerDarkModern
 
+% Option parsing
+\newif\if@doLightColors
+\@doLightColorsfalse
+\DeclareOption{light}{\@doLightColorstrue}
+\ProcessOptions
+
 % Load required packages
 \RequirePackage{xcolor}
 \RequirePackage{hyperref}
@@ -19,13 +25,13 @@
 	\begin{frame}[plain]
 		\begin{tikzpicture}[remember picture, overlay]
 			\usebeamercolor{title}
-			\node[fg, inner sep = 5mm, draw = gray, minimum height = 20mm, rounded corners = 2mm] (box) at (current page) {%
+			\node[fg, inner sep = 5mm, draw = fg, line width = 0.5mm, minimum height = 20mm, rounded corners = 2mm] (box) at (current page) {%
 				\usebeamerfont{title}%
 				\begin{minipage}{0.8\paperwidth}
 					\centering#1%
 				\end{minipage}
 			};
-			\node[gray, fill = bg, left, shift = {(-5mm, 0mm)}] at (box.north east) {\huge#2};
+			\node[fg, fill = bg, left, shift = {(-5mm, 0mm)}] at (box.north east) {\LARGE#2};
 		\end{tikzpicture}
 	\end{frame}
 	\addtocounter{framenumber}{-1}

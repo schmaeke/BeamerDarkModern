@@ -6,36 +6,73 @@
 \RequirePackage{xcolor}
 
 % Define default colors
-\definecolor{default-fg}{HTML}{ffffff}
-\definecolor{default-bg}{HTML}{1f1f1f}
+\if@doLightColors
+  \definecolor{default-fg}{HTML}{000000}
+  \definecolor{default-bg}{HTML}{ffffff}
 
-\definecolor{darkgray}{HTML}{3a3a3a}
-\definecolor{gray}{HTML}{505050}
-\definecolor{lightgray}{HTML}{c2c2c2}
+  \definecolor{darkgray}{HTML}{3a3a3a}
+  \definecolor{gray}{HTML}{707070}
+  \definecolor{lightgray}{HTML}{8c8c8c}
 
-\definecolor{darkred}{HTML}{c04d4d}
-\definecolor{red}{HTML}{ff7070}
-\definecolor{lightred}{HTML}{ffadad}
+  \definecolor{darkred}{HTML}{7d0000}
+  \definecolor{red}{HTML}{b22222}
+  \definecolor{lightred}{HTML}{e06666}
 
-\definecolor{darkgreen}{HTML}{8dc47e}
-\definecolor{green}{HTML}{c4f08c}
-\definecolor{lightgreen}{HTML}{e0ffb3}
+  \definecolor{darkgreen}{HTML}{2e6e00}
+  \definecolor{green}{HTML}{5aaf3d}
+  \definecolor{lightgreen}{HTML}{8dd35f}
 
-\definecolor{darkyellow}{HTML}{d3b34a}
-\definecolor{yellow}{HTML}{f0e08f}
-\definecolor{lightyellow}{HTML}{f8f4c3}
+  \definecolor{darkyellow}{HTML}{8c6b00}
+  \definecolor{yellow}{HTML}{b89c20}
+  \definecolor{lightyellow}{HTML}{dac650}
 
-\definecolor{darkblue}{HTML}{5c8ef0}
-\definecolor{blue}{HTML}{7da6ff}
-\definecolor{lightblue}{HTML}{adc8ff}
+  \definecolor{darkblue}{HTML}{003f7f}
+  \definecolor{blue}{HTML}{2664b8}
+  \definecolor{lightblue}{HTML}{5e93e6}
 
-\definecolor{darkmagenta}{HTML}{ad71ac}
-\definecolor{magenta}{HTML}{e7a5e8}
-\definecolor{lightmagenta}{HTML}{f7d0f8}
+  \definecolor{darkmagenta}{HTML}{74006b}
+  \definecolor{magenta}{HTML}{a52fa5}
+  \definecolor{lightmagenta}{HTML}{d275d3}
 
-\definecolor{darkcyan}{HTML}{72b2cc}
-\definecolor{cyan}{HTML}{94e2ff}
-\definecolor{lightcyan}{HTML}{c4f0ff}
+  \definecolor{darkcyan}{HTML}{006b76}
+  \definecolor{cyan}{HTML}{1e9bb3}
+  \definecolor{lightcyan}{HTML}{5ec7e0}
+
+  \colorlet{block-bg}{default-bg!90!lightgray}
+\else
+  \definecolor{default-fg}{HTML}{ffffff}
+  \definecolor{default-bg}{HTML}{1f1f1f}
+
+  \definecolor{darkgray}{HTML}{3a3a3a}
+  \definecolor{gray}{HTML}{505050}
+  \definecolor{lightgray}{HTML}{c2c2c2}
+
+  \definecolor{darkred}{HTML}{c04d4d}
+  \definecolor{red}{HTML}{ff7070}
+  \definecolor{lightred}{HTML}{ffadad}
+
+  \definecolor{darkgreen}{HTML}{8dc47e}
+  \definecolor{green}{HTML}{c4f08c}
+  \definecolor{lightgreen}{HTML}{e0ffb3}
+
+  \definecolor{darkyellow}{HTML}{d3b34a}
+  \definecolor{yellow}{HTML}{f0e08f}
+  \definecolor{lightyellow}{HTML}{f8f4c3}
+
+  \definecolor{darkblue}{HTML}{5c8ef0}
+  \definecolor{blue}{HTML}{7da6ff}
+  \definecolor{lightblue}{HTML}{adc8ff}
+
+  \definecolor{darkmagenta}{HTML}{ad71ac}
+  \definecolor{magenta}{HTML}{e7a5e8}
+  \definecolor{lightmagenta}{HTML}{f7d0f8}
+
+  \definecolor{darkcyan}{HTML}{72b2cc}
+  \definecolor{cyan}{HTML}{94e2ff}
+  \definecolor{lightcyan}{HTML}{c4f0ff}
+
+  \colorlet{block-bg}{default-bg!50!darkgray}
+\fi
 
 \colorlet{accent}{cyan}
 
@@ -61,7 +98,6 @@
 \setbeamercolor*{alerted text}{fg = accent}
 
 % Blocks
-\colorlet{block-bg}{default-bg!50!darkgray}
 \setbeamercolor*{block title}{bg = block-bg, fg = accent}
 \setbeamercolor*{block body}{bg = block-bg}
 
