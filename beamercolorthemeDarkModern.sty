@@ -38,7 +38,7 @@
   \definecolor{cyan}{HTML}{1e9bb3}
   \definecolor{lightcyan}{HTML}{5ec7e0}
 
-  \colorlet{block-bg}{default-bg!90!lightgray}
+  \colorlet{block-bg}{default-bg!85!lightgray}
 \else
   \definecolor{default-fg}{HTML}{ffffff}
   \definecolor{default-bg}{HTML}{1f1f1f}
@@ -71,10 +71,10 @@
   \definecolor{cyan}{HTML}{94e2ff}
   \definecolor{lightcyan}{HTML}{c4f0ff}
 
-  \colorlet{block-bg}{default-bg!50!darkgray}
+  \colorlet{block-bg}{default-bg!20!darkgray}
 \fi
 
-\colorlet{accent}{cyan}
+\colorlet{accent}{darkblue}
 
 % Title frame
 \setbeamercolor*{title}{bg = default-bg, fg = accent}
@@ -93,6 +93,9 @@
 \setbeamercolor*{section in head/foot}{fg = accent}
 \setbeamercolor*{section in toc}{fg = default-fg}
 \setbeamercolor*{section in toc shaded}{fg = default-fg!50!default-bg}
+
+% Footline
+\setbeamercolor*{footline}{fg = default-fg!50!default-bg}
 
 % Alerted text
 \setbeamercolor*{alerted text}{fg = accent}

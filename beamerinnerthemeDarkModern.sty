@@ -36,8 +36,12 @@
 		\begin{frame}[plain]
 			\begin{tikzpicture}[remember picture, overlay]
 				\usebeamercolor{title}
-				\node[rotate = -10, opacity = 0.2] at (current page) {%
-					\tikz{\draw[fg] (-\paperwidth, -\paperheight) grid (2\paperwidth, 2\paperheight);}
+				\node[rotate = -10, opacity = 0.4] at (current page.south west) {%
+					\tikz{%
+						\fill[bg, inner color = fg!75!bg, outer color = bg] (-0.5\paperwidth, -0.5\paperheight) circle (1.5\paperwidth);
+						\draw[fg, step = 0.5, opacity = 0.05] (-\paperwidth, -\paperheight) grid (2\paperwidth, 2\paperheight);
+						\draw[fg, opacity = 0.1] (-\paperwidth, -\paperheight) grid (2\paperwidth, 2\paperheight);
+						}
 				};
 				\usebeamercolor{normal text}
 				\node[below right, shift = {(5mm, -5mm)}] at (current page.north west) {\usebeamerfont{institute}\insertinstitute};
